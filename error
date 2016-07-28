@@ -1,0 +1,288 @@
+ => Errors while adding packages:             
+                                              
+While loading package numtel:mysql-server@1.0.1:
+error: Command failed:
+/home/ram/.meteor/packages/meteor-tool/.1.4.0.hylsrj++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/bin/npm
+rebuild --no-bin-links --update-binary
+In file included from ../node_modules/nan/nan_new.h:190:0,
+from ../node_modules/nan/nan.h:80,
+from ../src/bcrypt_node.cc:1:
+../node_modules/nan/nan_implementation_12_inl.h: In static member function ‘static NanIntern::FactoryBase<v8::Signature>::return_t
+NanIntern::Factory<v8::Signature>::New(NanIntern::Factory<v8::Signature>::FTH, int, NanIntern::Factory<v8::Signature>::FTH*)’:
+../node_modules/nan/nan_implementation_12_inl.h:181:76: error: no matching function for call to ‘v8::Signature::New(v8::Isolate*,
+NanIntern::Factory<v8::Signature>::FTH&, int&, NanIntern::Factory<v8::Signature>::FTH*&)’
+return v8::Signature::New(v8::Isolate::GetCurrent(), receiver, argc,
+argv);
+^
+../node_modules/nan/nan_implementation_12_inl.h:181:76: note: candidate is:
+In file included from /home/ram/.node-gyp/4.4.7/include/node/node.h:42:0,
+from ../node_modules/nan/nan.h:24,
+from ../src/bcrypt_node.cc:1:
+/home/ram/.node-gyp/4.4.7/include/node/v8.h:4675:27: note: static v8::Local<v8::Signature> v8::Signature::New(v8::Isolate*,
+v8::Local<v8::FunctionTemplate>)
+static Local<Signature> New(
+^
+/home/ram/.node-gyp/4.4.7/include/node/v8.h:4675:27: note:   candidate expects 2 arguments, 4 provided
+In file included from ../src/bcrypt_node.cc:1:0:
+../node_modules/nan/nan.h: At global scope:
+../node_modules/nan/nan.h:171:25: error: redefinition of ‘template<class T> v8::Local<T> _NanEnsureLocal(v8::Local<T>)’
+NAN_INLINE v8::Local<T> _NanEnsureLocal(v8::Local<T> val) {
+^
+../node_modules/nan/nan.h:166:25: error: ‘template<class T> v8::Local<T> _NanEnsureLocal(v8::Handle<T>)’ previously declared here
+NAN_INLINE v8::Local<T> _NanEnsureLocal(v8::Handle<T> val) {
+^
+../node_modules/nan/nan.h:564:13: error: ‘node::smalloc’ has not been declared
+, node::smalloc::FreeCallback callback
+^
+../node_modules/nan/nan.h:564:35: error: expected ‘,’ or ‘...’ before ‘callback’
+, node::smalloc::FreeCallback callback
+^
+../node_modules/nan/nan.h: In function ‘v8::Local<v8::Object> NanNewBufferHandle(char*, size_t, int)’:
+../node_modules/nan/nan.h:568:50: error: ‘callback’ was not declared in this scope
+v8::Isolate::GetCurrent(), data, length, callback, hint);
+^
+../node_modules/nan/nan.h:568:60: error: ‘hint’ was not declared in this scope
+v8::Isolate::GetCurrent(), data, length, callback, hint);
+^
+../node_modules/nan/nan.h: In function ‘v8::Local<v8::Object> NanNewBufferHandle(const char*, uint32_t)’:
+../node_modules/nan/nan.h:575:67: error: call of overloaded ‘New(v8::Isolate*, const char*&, uint32_t&)’ is ambiguous
+return node::Buffer::New(v8::Isolate::GetCurrent(), data, size);
+^
+../node_modules/nan/nan.h:575:67: note: candidates are:
+In file included from ../node_modules/nan/nan.h:25:0,
+from ../src/bcrypt_node.cc:1:
+/home/ram/.node-gyp/4.4.7/include/node/node_buffer.h:31:40: note: v8::MaybeLocal<v8::Object> node::Buffer::New(v8::Isolate*,
+v8::Local<v8::String>, node::encoding) <near match>
+NODE_EXTERN v8::MaybeLocal<v8::Object> New(v8::Isolate* isolate,
+^
+/home/ram/.node-gyp/4.4.7/include/node/node_buffer.h:31:40: note:   no known conversion for argument 3 from ‘uint32_t {aka unsigned
+int}’ to ‘node::encoding’
+/home/ram/.node-gyp/4.4.7/include/node/node_buffer.h:43:40: note: v8::MaybeLocal<v8::Object> node::Buffer::New(v8::Isolate*, char*,
+size_t) <near match>
+NODE_EXTERN v8::MaybeLocal<v8::Object> New(v8::Isolate* isolate,
+^
+/home/ram/.node-gyp/4.4.7/include/node/node_buffer.h:43:40: note:   no known conversion for argument 2 from ‘const char*’ to ‘char*’
+In file included from ../src/bcrypt_node.cc:1:0:
+../node_modules/nan/nan.h: In function ‘v8::Local<v8::Object> NanNewBufferHandle(uint32_t)’:
+../node_modules/nan/nan.h:579:61: error: could not convert ‘node::Buffer::New(v8::Isolate::GetCurrent(), ((size_t)size))’ from
+‘v8::MaybeLocal<v8::Object>’ to ‘v8::Local<v8::Object>’
+return node::Buffer::New(v8::Isolate::GetCurrent(), size);
+^
+../node_modules/nan/nan.h: In function ‘v8::Local<v8::Object> NanBufferUse(char*, uint32_t)’:
+../node_modules/nan/nan.h:586:12: error: ‘Use’ is not a member of ‘node::Buffer’
+return node::Buffer::Use(v8::Isolate::GetCurrent(), data, size);
+^
+../src/bcrypt_node.cc: In member function ‘virtual void {anonymous}::SaltAsyncWorker::HandleOKCallback()’:
+../src/bcrypt_node.cc:85:59: warning: ‘v8::Local<v8::Value> node::Encode(const void*, size_t, node::encoding)’ is deprecated (declared
+at /home/ram/.node-gyp/4.4.7/include/node/node.h:298): Use Encode(isolate, ...) [-Wdeprecated-declarations]
+argv[1] = Encode(salt.c_str(), salt.size(), BINARY);
+^
+In file included from ../src/bcrypt_node.cc:1:0:
+../src/bcrypt_node.cc: In function ‘void {anonymous}::GenerateSaltSync(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/bcrypt_node.cc:139:53: warning: ‘v8::Local<v8::Value> node::Encode(const void*, size_t, node::encoding)’ is deprecated (declared
+at /home/ram/.node-gyp/4.4.7/include/node/node.h:298): Use Encode(isolate, ...) [-Wdeprecated-declarations]
+NanReturnValue(Encode(salt, strlen(salt), BINARY));
+^
+../node_modules/nan/nan.h:306:65: note: in definition of macro ‘NanReturnValue’
+# define NanReturnValue(value) return args.GetReturnValue().Set(value)
+^
+../src/bcrypt_node.cc: In member function ‘virtual void {anonymous}::EncryptAsyncWorker::HandleOKCallback()’:
+../src/bcrypt_node.cc:172:67: warning: ‘v8::Local<v8::Value> node::Encode(const void*, size_t, node::encoding)’ is deprecated (declared
+at /home/ram/.node-gyp/4.4.7/include/node/node.h:298): Use Encode(isolate, ...) [-Wdeprecated-declarations]
+argv[1] = Encode(output.c_str(), output.size(), BINARY);
+^
+In file included from ../src/bcrypt_node.cc:1:0:
+../src/bcrypt_node.cc: In function ‘void {anonymous}::EncryptSync(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/bcrypt_node.cc:223:61: warning: ‘v8::Local<v8::Value> node::Encode(const void*, size_t, node::encoding)’ is deprecated (declared
+at /home/ram/.node-gyp/4.4.7/include/node/node.h:298): Use Encode(isolate, ...) [-Wdeprecated-declarations]
+NanReturnValue(Encode(bcrypted, strlen(bcrypted), BINARY));
+^
+../node_modules/nan/nan.h:306:65: note: in definition of macro ‘NanReturnValue’
+# define NanReturnValue(value) return args.GetReturnValue().Set(value)
+^
+make: *** [Release/obj.target/bcrypt_lib/src/bcrypt_node.o] Error 1
+gyp ERR! build error 
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit
+(/home/ram/.meteor/packages/meteor-tool/.1.4.0.hylsrj++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:276:23)
+gyp ERR! stack     at emitTwo (events.js:87:13)
+gyp ERR! stack     at ChildProcess.emit (events.js:172:7)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:200:12)
+gyp ERR! System Linux 3.13.0-52-generic
+gyp ERR! command
+"/home/ram/.meteor/packages/meteor-tool/.1.4.0.hylsrj++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/bin/node"
+"/home/ram/.meteor/packages/meteor-tool/.1.4.0.hylsrj++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js"
+"rebuild"
+gyp ERR! cwd
+/home/ram/.meteor/packages/numtel_mysql-server/.1.0.1.1vau7ur++os.linux.x86_64+web.browser+web.cordova/npm/node_modules/.temp-ip0x0w/node_modules/bcrypt
+gyp ERR! node -v v4.4.7
+gyp ERR! node-gyp -v v3.4.0
+gyp ERR! not ok 
+
+npm ERR! Linux 3.13.0-52-generic
+npm ERR! argv
+"/home/ram/.meteor/packages/meteor-tool/.1.4.0.hylsrj++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/bin/node"
+"/home/ram/.meteor/packages/meteor-tool/.1.4.0.hylsrj++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/bin/npm"
+"rebuild" "--no-bin-links" "--update-binary"
+npm ERR! node v4.4.7
+npm ERR! npm  v3.10.5
+npm ERR! code ELIFECYCLE
+npm ERR! bcrypt@0.8.2 install: `node-gyp rebuild`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the bcrypt@0.8.2 install script 'node-gyp rebuild'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the bcrypt package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node-gyp rebuild
+npm ERR! You can get information on how to open an issue for this project with:
+npm ERR!     npm bugs bcrypt
+npm ERR! Or if that isn't available, you can get their info via:
+npm ERR!     npm owner ls bcrypt
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!
+/home/ram/.meteor/packages/numtel_mysql-server/.1.0.1.1vau7ur++os.linux.x86_64+web.browser+web.cordova/npm/node_modules/.temp-ip0x0w/npm-debug.log
+In file included from ../node_modules/nan/nan_new.h:190:0,
+from ../node_modules/nan/nan.h:80,
+from ../src/bcrypt_node.cc:1:
+../node_modules/nan/nan_implementation_12_inl.h: In static member function ‘static NanIntern::FactoryBase<v8::Signature>::return_t
+NanIntern::Factory<v8::Signature>::New(NanIntern::Factory<v8::Signature>::FTH, int, NanIntern::Factory<v8::Signature>::FTH*)’:
+../node_modules/nan/nan_implementation_12_inl.h:181:76: error: no matching function for call to ‘v8::Signature::New(v8::Isolate*,
+NanIntern::Factory<v8::Signature>::FTH&, int&, NanIntern::Factory<v8::Signature>::FTH*&)’
+return v8::Signature::New(v8::Isolate::GetCurrent(), receiver, argc,
+argv);
+^
+../node_modules/nan/nan_implementation_12_inl.h:181:76: note: candidate is:
+In file included from /home/ram/.node-gyp/4.4.7/include/node/node.h:42:0,
+from ../node_modules/nan/nan.h:24,
+from ../src/bcrypt_node.cc:1:
+/home/ram/.node-gyp/4.4.7/include/node/v8.h:4675:27: note: static v8::Local<v8::Signature> v8::Signature::New(v8::Isolate*,
+v8::Local<v8::FunctionTemplate>)
+static Local<Signature> New(
+^
+/home/ram/.node-gyp/4.4.7/include/node/v8.h:4675:27: note:   candidate expects 2 arguments, 4 provided
+In file included from ../src/bcrypt_node.cc:1:0:
+../node_modules/nan/nan.h: At global scope:
+../node_modules/nan/nan.h:171:25: error: redefinition of ‘template<class T> v8::Local<T> _NanEnsureLocal(v8::Local<T>)’
+NAN_INLINE v8::Local<T> _NanEnsureLocal(v8::Local<T> val) {
+^
+../node_modules/nan/nan.h:166:25: error: ‘template<class T> v8::Local<T> _NanEnsureLocal(v8::Handle<T>)’ previously declared here
+NAN_INLINE v8::Local<T> _NanEnsureLocal(v8::Handle<T> val) {
+^
+../node_modules/nan/nan.h:564:13: error: ‘node::smalloc’ has not been declared
+, node::smalloc::FreeCallback callback
+^
+../node_modules/nan/nan.h:564:35: error: expected ‘,’ or ‘...’ before ‘callback’
+, node::smalloc::FreeCallback callback
+^
+../node_modules/nan/nan.h: In function ‘v8::Local<v8::Object> NanNewBufferHandle(char*, size_t, int)’:
+../node_modules/nan/nan.h:568:50: error: ‘callback’ was not declared in this scope
+v8::Isolate::GetCurrent(), data, length, callback, hint);
+^
+../node_modules/nan/nan.h:568:60: error: ‘hint’ was not declared in this scope
+v8::Isolate::GetCurrent(), data, length, callback, hint);
+^
+../node_modules/nan/nan.h: In function ‘v8::Local<v8::Object> NanNewBufferHandle(const char*, uint32_t)’:
+../node_modules/nan/nan.h:575:67: error: call of overloaded ‘New(v8::Isolate*, const char*&, uint32_t&)’ is ambiguous
+return node::Buffer::New(v8::Isolate::GetCurrent(), data, size);
+^
+../node_modules/nan/nan.h:575:67: note: candidates are:
+In file included from ../node_modules/nan/nan.h:25:0,
+from ../src/bcrypt_node.cc:1:
+/home/ram/.node-gyp/4.4.7/include/node/node_buffer.h:31:40: note: v8::MaybeLocal<v8::Object> node::Buffer::New(v8::Isolate*,
+v8::Local<v8::String>, node::encoding) <near match>
+NODE_EXTERN v8::MaybeLocal<v8::Object> New(v8::Isolate* isolate,
+^
+/home/ram/.node-gyp/4.4.7/include/node/node_buffer.h:31:40: note:   no known conversion for argument 3 from ‘uint32_t {aka unsigned
+int}’ to ‘node::encoding’
+/home/ram/.node-gyp/4.4.7/include/node/node_buffer.h:43:40: note: v8::MaybeLocal<v8::Object> node::Buffer::New(v8::Isolate*, char*,
+size_t) <near match>
+NODE_EXTERN v8::MaybeLocal<v8::Object> New(v8::Isolate* isolate,
+^
+/home/ram/.node-gyp/4.4.7/include/node/node_buffer.h:43:40: note:   no known conversion for argument 2 from ‘const char*’ to ‘char*’
+In file included from ../src/bcrypt_node.cc:1:0:
+../node_modules/nan/nan.h: In function ‘v8::Local<v8::Object> NanNewBufferHandle(uint32_t)’:
+../node_modules/nan/nan.h:579:61: error: could not convert ‘node::Buffer::New(v8::Isolate::GetCurrent(), ((size_t)size))’ from
+‘v8::MaybeLocal<v8::Object>’ to ‘v8::Local<v8::Object>’
+return node::Buffer::New(v8::Isolate::GetCurrent(), size);
+^
+../node_modules/nan/nan.h: In function ‘v8::Local<v8::Object> NanBufferUse(char*, uint32_t)’:
+../node_modules/nan/nan.h:586:12: error: ‘Use’ is not a member of ‘node::Buffer’
+return node::Buffer::Use(v8::Isolate::GetCurrent(), data, size);
+^
+../src/bcrypt_node.cc: In member function ‘virtual void {anonymous}::SaltAsyncWorker::HandleOKCallback()’:
+../src/bcrypt_node.cc:85:59: warning: ‘v8::Local<v8::Value> node::Encode(const void*, size_t, node::encoding)’ is deprecated (declared
+at /home/ram/.node-gyp/4.4.7/include/node/node.h:298): Use Encode(isolate, ...) [-Wdeprecated-declarations]
+argv[1] = Encode(salt.c_str(), salt.size(), BINARY);
+^
+In file included from ../src/bcrypt_node.cc:1:0:
+../src/bcrypt_node.cc: In function ‘void {anonymous}::GenerateSaltSync(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/bcrypt_node.cc:139:53: warning: ‘v8::Local<v8::Value> node::Encode(const void*, size_t, node::encoding)’ is deprecated (declared
+at /home/ram/.node-gyp/4.4.7/include/node/node.h:298): Use Encode(isolate, ...) [-Wdeprecated-declarations]
+NanReturnValue(Encode(salt, strlen(salt), BINARY));
+^
+../node_modules/nan/nan.h:306:65: note: in definition of macro ‘NanReturnValue’
+# define NanReturnValue(value) return args.GetReturnValue().Set(value)
+^
+../src/bcrypt_node.cc: In member function ‘virtual void {anonymous}::EncryptAsyncWorker::HandleOKCallback()’:
+../src/bcrypt_node.cc:172:67: warning: ‘v8::Local<v8::Value> node::Encode(const void*, size_t, node::encoding)’ is deprecated (declared
+at /home/ram/.node-gyp/4.4.7/include/node/node.h:298): Use Encode(isolate, ...) [-Wdeprecated-declarations]
+argv[1] = Encode(output.c_str(), output.size(), BINARY);
+^
+In file included from ../src/bcrypt_node.cc:1:0:
+../src/bcrypt_node.cc: In function ‘void {anonymous}::EncryptSync(const v8::FunctionCallbackInfo<v8::Value>&)’:
+../src/bcrypt_node.cc:223:61: warning: ‘v8::Local<v8::Value> node::Encode(const void*, size_t, node::encoding)’ is deprecated (declared
+at /home/ram/.node-gyp/4.4.7/include/node/node.h:298): Use Encode(isolate, ...) [-Wdeprecated-declarations]
+NanReturnValue(Encode(bcrypted, strlen(bcrypted), BINARY));
+^
+../node_modules/nan/nan.h:306:65: note: in definition of macro ‘NanReturnValue’
+# define NanReturnValue(value) return args.GetReturnValue().Set(value)
+^
+make: *** [Release/obj.target/bcrypt_lib/src/bcrypt_node.o] Error 1
+gyp ERR! build error 
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit
+(/home/ram/.meteor/packages/meteor-tool/.1.4.0.hylsrj++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:276:23)
+gyp ERR! stack     at emitTwo (events.js:87:13)
+gyp ERR! stack     at ChildProcess.emit (events.js:172:7)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:200:12)
+gyp ERR! System Linux 3.13.0-52-generic
+gyp ERR! command
+"/home/ram/.meteor/packages/meteor-tool/.1.4.0.hylsrj++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/bin/node"
+"/home/ram/.meteor/packages/meteor-tool/.1.4.0.hylsrj++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js"
+"rebuild"
+gyp ERR! cwd
+/home/ram/.meteor/packages/numtel_mysql-server/.1.0.1.1vau7ur++os.linux.x86_64+web.browser+web.cordova/npm/node_modules/.temp-ip0x0w/node_modules/bcrypt
+gyp ERR! node -v v4.4.7
+gyp ERR! node-gyp -v v3.4.0
+gyp ERR! not ok 
+
+npm ERR! Linux 3.13.0-52-generic
+npm ERR! argv
+"/home/ram/.meteor/packages/meteor-tool/.1.4.0.hylsrj++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/bin/node"
+"/home/ram/.meteor/packages/meteor-tool/.1.4.0.hylsrj++os.linux.x86_64+web.browser+web.cordova/mt-os.linux.x86_64/dev_bundle/bin/npm"
+"rebuild" "--no-bin-links" "--update-binary"
+npm ERR! node v4.4.7
+npm ERR! npm  v3.10.5
+npm ERR! code ELIFECYCLE
+npm ERR! bcrypt@0.8.2 install: `node-gyp rebuild`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the bcrypt@0.8.2 install script 'node-gyp rebuild'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the bcrypt package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node-gyp rebuild
+npm ERR! You can get information on how to open an issue for this project with:
+npm ERR!     npm bugs bcrypt
+npm ERR! Or if that isn't available, you can get their info via:
+npm ERR!     npm owner ls bcrypt
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!
+/home/ram/.meteor/packages/numtel_mysql-server/.1.0.1.1vau7ur++os.linux.x86_64+web.browser+web.cordova/npm/node_modules/.temp-ip0x0w/npm-debug.log
