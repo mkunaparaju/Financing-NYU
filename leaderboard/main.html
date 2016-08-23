@@ -1,0 +1,30 @@
+
+
+<head>
+    <title>Profile Page</title>
+</head>
+<body>
+    <h1>Welcome User</h1>
+
+    {{> profilePage}}
+    {{>addStudent}}
+</body>
+
+<template name="profilePage">
+   {{#each student}}
+<li class="student {{selectedClass}}">    {{name}} : {{debt}} </li>
+    {{/each}}
+    <button class="compoundInt">Calculate Compound Interest</button>
+    <button class="remove">Remove Student</button>
+</template>
+
+<template name = "addStudent">
+ 	<form>
+        <input type="text" name="studentName" placeholder="Name">
+        <input type="text" name="studentP" placeholder="Principle Amount">
+        <input type="text" name="studentR" placeholder="Rate of Interest">
+        <input type="text" name="studentT" placeholder="Time">
+        <input type="text" name="studentN" placeholder="Times compounded in YR">
+        <input type="submit" value="Add Student">
+    </form>
+</template>
